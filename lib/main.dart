@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pataiu/pages.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +12,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Deep Flow',
+      title: 'PARAIU',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const WelcomePage(),
+        '/home': (context) => const HomePage()
+      },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
       ),
-      home: const MyHomePage(title: 'PATAIU'),
+
     );
   }
 }
