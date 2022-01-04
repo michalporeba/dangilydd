@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PARAIU',
-      initialRoute: '/',
+      initialRoute: '/welcome',
       routes: {
-        '/': (context) => const WelcomePage(),
-        '/home': (context) => const HomePage()
+        '/welcome': (context) => const WelcomePage(),
+        '/': (context) => const MainPage()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,

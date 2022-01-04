@@ -18,7 +18,7 @@ class WelcomePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(32.0),
                 child: ElevatedButton(
-                    onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
+                    onPressed: () => Navigator.pushReplacementNamed(context, '/'),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Text('Hello', style: Theme.of(context).textTheme.headline5),
@@ -94,6 +94,23 @@ class ActionsPage extends StatelessWidget {
               ]
           )
       ),
+    );
+  }
+}
+
+class MainPage extends StatelessWidget {
+  const MainPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final PageController controller = PageController(initialPage: 1);
+    return PageView(
+      controller: controller,
+      children: const <Widget>[
+        ActionsPage(),
+        HomePage(),
+        ResourcesPage()
+      ]
     );
   }
 }
