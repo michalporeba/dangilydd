@@ -12,6 +12,7 @@ Sometime, to run an event one may need a group of suitably qualified individuals
 
 &nbsp;
 ## The result
-So far it looks as unimpressive as this:
+
+The 'login' screen
 
 ![](./docs/images/first.png)

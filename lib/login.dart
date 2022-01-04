@@ -14,22 +14,56 @@ class LoginPage extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(32.0),
-                  child: Text('Login Page', style: Theme.of(context).textTheme.headline4),
+                  child: Text('Who are you?', style: Theme.of(context).textTheme.headline4),
                 ),
+                const UserButton(name: 'Aneirin', image: '1005'),
+                const UserButton(name: 'Branwen', image: '1011'),
+                const UserButton(name: 'Caradog', image: '1033'),
                 const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(32.0),
-                  child: ElevatedButton(
-                      onPressed: () => Navigator.pushReplacementNamed(context, '/welcome'),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Text('Sign in', style: Theme.of(context).textTheme.headline5),
-                      )
-                  ),
-                )
+
               ]
           )
       ),
     );
   }
 }
+
+class UserButton extends StatelessWidget {
+  final String name;
+  final String image;
+  const UserButton({
+    required this.name,
+    this.image = '1005',
+    Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Material(
+          color: Theme.of(context).primaryColor,
+          elevation: 8,
+          borderRadius: BorderRadius.circular(32),
+          child:
+            InkWell(
+              onTap: () => Navigator.pushReplacementNamed(context, '/welcome'),
+              child: Row(
+                  children: [
+                    const SizedBox(width: 36),
+                    Ink.image(
+                      image: NetworkImage('https://picsum.photos/200?image='+image),
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+                const SizedBox(width: 24),
+                Text(name, style: Theme.of(context).textTheme.headline4),
+              ]
+          ),
+        ),
+      ),
+    );
+
+  }
+}
+
