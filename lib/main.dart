@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pataiu/pages.dart';
+import 'package:pataiu/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PARAIU',
-      initialRoute: '/welcome',
+      initialRoute: '/login',
       routes: {
+        '/login': (context) => const LoginPage(),
         '/welcome': (context) => const WelcomePage(),
         '/': (context) => const MainPage()
       },

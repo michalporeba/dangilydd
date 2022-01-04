@@ -38,7 +38,19 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('PATAIU')),
+      appBar: AppBar(title: const Text('PATAIU'),
+          actions: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                onTap: () { Navigator.pushReplacementNamed(context, '/login'); },
+                child: const Icon(
+                  Icons.logout
+                ),
+              )
+            ),
+          ],
+      ),
       body: Center(
           child: Column(
               children: [
