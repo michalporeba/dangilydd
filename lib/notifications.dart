@@ -43,12 +43,19 @@ class NotificationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle? buttonStyle = Theme.of(context).textTheme.button?.copyWith(color: Colors.pink);
+    Icon icon = const Icon(Icons.message);
+    if (data.icon == 'warning') {
+      icon = const Icon(Icons.warning);
+    }
+
     return Card(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ListTile(
-            leading: Icon(Icons.album),
+            leading: icon,
+            minVerticalPadding: 10,
+            horizontalTitleGap: 0,
             title: Text(data.subject, style: Theme.of(context).textTheme.headline5),
             subtitle: Text(data.message ?? '', style: Theme.of(context).textTheme.bodyText1),
           ),
