@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'notifications.dart';
 import 'state.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -21,7 +22,7 @@ class WelcomePage extends StatelessWidget {
                   return Text('Hi, ${user?.name ?? ''}', style: Theme.of(context).textTheme.headline4);
                 }),
               ),
-              const Text('There are no updates for you today!'),
+              const NotificationsView(),
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.all(32.0),
@@ -105,6 +106,12 @@ class MainPage extends StatelessWidget {
     final PageController controller = PageController(initialPage: 1);
     return Scaffold(
       appBar: AppBar(title: const Text('PATAIU'),
+        leading: GestureDetector(
+          onTap: () { /* Write listener code here */ },
+          child: const Icon(
+            Icons.menu,  // add custom icons also
+          ),
+        ),
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.only(right: 20.0),

@@ -3,11 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 @immutable
 class User {
+  final List<String> _roles;
+
   final String name;
 
-  const User({
-    required this.name
-  });
+  User({
+    required this.name,
+    List<String>? roles
+  }) :
+    _roles = List.unmodifiable(roles ?? <String>[]);
 
   User copyWith({
     String? name
