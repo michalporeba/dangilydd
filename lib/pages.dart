@@ -50,8 +50,42 @@ class HomePage extends StatelessWidget {
         child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: Text('Home Page', style: Theme.of(context).textTheme.headline4),
+                padding: const EdgeInsets.all(24.0),
+                child: Text('Your upcoming events', style: Theme.of(context).textTheme.headline5),
+              ),
+              const EventTile(
+                leading: EventLogo(text: 'HP'),
+                title: 'Wednesday Help Point',
+                subtitle: '5/1/22 - 20:00 to 04:00\nPTA on HK105'
+              ),
+              const EventTile(
+                  leading: EventLogo(text: 'T'),
+                  title: 'Thursday Training in Division',
+                  subtitle: '6/1/22 - 19:00 to 21:00\nScenarios'
+              ),
+              const EventTile(
+                  leading: EventLogo(text: 'HP'),
+                  title: 'Wednesday Help Point',
+                  subtitle: '8/1/22 - 20:00 to 04:00\nPTA on HK102'
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text('Sign up for more', style: Theme.of(context).textTheme.headline5),
+              ),
+              const EventTile(
+                  leading: EventLogo(text: 'HP', color: Colors.black38),
+                  title: 'Help Points',
+                  subtitle: 'multiple dates - 20:00 to 04:00\nmultiple roles available'
+              ),
+              const EventTile(
+                  leading: EventLogo(text: 'T', color: Colors.black38),
+                  title: 'Training: Assisting HCP',
+                  subtitle: '12/2/22 in Swansea Training Centre\n5places remaining'
+              ),
+              const EventTile(
+                  leading: EventLogo(text: 'T', color: Colors.black38),
+                  title: 'Online CPD: Hypothermia',
+                  subtitle: '23/2/22 - 20:30 on Teams'
               ),
               const Spacer(),
             ]
@@ -59,6 +93,54 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+class EventLogo extends StatelessWidget {
+  final Color color;
+  final String text;
+
+  const EventLogo({
+    required this.text,
+    Color? color,
+    Key? key
+  }) : color = color ?? Colors.purple, super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      child: Text(text),
+      backgroundColor: color
+    );
+  }
+}
+
+
+class EventTile extends StatelessWidget {
+  final Widget leading;
+  final String title;
+  final String? subtitle;
+
+  const EventTile({
+    required this.leading,
+    required this.title,
+    this.subtitle,
+    Key? key
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 6,
+      margin: EdgeInsets.all(10),
+      child: ListTile(
+        leading: leading,
+        title: Text(title),
+        subtitle: (subtitle == null) ? null : Text(subtitle!),
+        trailing: const Icon(Icons.more_vert),
+      ),
+    );
+  }
+}
+
 
 class ResourcesPage extends StatelessWidget {
   const ResourcesPage({Key? key}) : super(key: key);
