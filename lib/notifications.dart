@@ -18,27 +18,67 @@ class NotificationsView extends ConsumerWidget {
   }
 }
 
-class NotificationsContentView extends StatelessWidget {
+class NotificationsContentView extends StatefulWidget {
   final List<UserNotification> notifications;
-  const NotificationsContentView({
-    required this.notifications,
+
+  NotificationsContentView({
+    required notifications,
     Key? key
-  }) : super(key: key);
+  }) : notifications = List.from(notifications), super(key: key);
+
+  @override
+  State<NotificationsContentView> createState() => _NotificationsContentViewState();
+}
+
+class _NotificationsContentViewState extends State<NotificationsContentView> {
+  final GlobalKey<AnimatedListState> _listKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
-    if (notifications.isEmpty) {
+    if (widget.notifications.isEmpty) {
       return const Text('There are no updates for you today!');
     }
-    return Column(
-      children: notifications.map((e) => NotificationCard(data: e)).toList()
+    return AnimatedList(
+        key: _listKey,
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        initialItemCount: widget.notifications.length,
+        itemBuilder: (context, index, animation) {
+          final notification = widget.notifications[index];
+            return _buildItem(notification, animation);
+          }
+    );
+  }
+
+  Widget _buildItem(UserNotification notification, Animation<double> animation) {
+    return SizeTransition(
+        sizeFactor: animation,
+        child: NotificationCard(data: notification, onAcknowledge: () {
+          final notifications = widget.notifications;
+
+          int removeIndex = notifications.indexOf(notification);
+          UserNotification removedItem = notifications.removeAt(removeIndex);
+
+          AnimatedListRemovedItemBuilder builder = (context, animation)
+          => _buildItem(removedItem, animation);
+
+          _listKey.currentState?.removeItem(
+              removeIndex,
+              builder
+          );
+        },)
     );
   }
 }
 
 class NotificationCard extends StatelessWidget {
   final UserNotification data;
-  const NotificationCard({required this.data, Key? key}) : super(key: key);
+  final Function() onAcknowledge;
+  const NotificationCard({
+    required this.data,
+    required this.onAcknowledge,
+    Key? key
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +109,7 @@ class NotificationCard extends StatelessWidget {
               const SizedBox(width: 8),
               TextButton(
                 child: Text('Acknowledge', style: buttonStyle),
-                onPressed: () {/* ... */},
+                onPressed: onAcknowledge,
               ),
               const SizedBox(width: 8),
             ],
