@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'state.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -6,22 +8,28 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('PATAIU')),
+      appBar: AppBar(title: const Text('PATAIU'),
+        automaticallyImplyLeading: false,
+      ),
       body: Center(
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(32.0),
-                child: Text('Welcome Page', style: Theme.of(context).textTheme.headline4),
+                child: Consumer(builder: (context, ref, _) {
+                  User? user = ref.watch(appState).user;
+                  return Text('Hi, ${user?.name ?? ''}', style: Theme.of(context).textTheme.headline4);
+                }),
               ),
+              const Text('There are no updates for you today!'),
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.all(32.0),
                 child: ElevatedButton(
                     onPressed: () => Navigator.pushReplacementNamed(context, '/'),
                     child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text('Hello', style: Theme.of(context).textTheme.headline5),
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text('Hello', style: Theme.of(context).textTheme.headline4),
                     )
                 ),
               )

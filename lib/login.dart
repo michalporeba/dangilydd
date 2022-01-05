@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pataiu/state.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -28,7 +30,7 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-class UserButton extends StatelessWidget {
+class UserButton extends ConsumerWidget {
   final String name;
   final String image;
   const UserButton({
@@ -37,7 +39,7 @@ class UserButton extends StatelessWidget {
     Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding: const EdgeInsets.all(32.0),
       child: Material(
@@ -46,7 +48,10 @@ class UserButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(32),
           child:
             InkWell(
-              onTap: () => Navigator.pushReplacementNamed(context, '/welcome'),
+              onTap: () {
+                ref.read(appState.notifier).setUser(User(name: name));
+                Navigator.pushReplacementNamed(context, '/welcome');
+              },
               child: Row(
                   children: [
                     const SizedBox(width: 36),
