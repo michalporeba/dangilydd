@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'notifications.dart';
 import 'state.dart';
+import 'actions.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -153,25 +154,6 @@ class ResourcesPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(32.0),
                 child: Text('Resources Page', style: Theme.of(context).textTheme.headline4),
-              ),
-              const Spacer(),
-            ]
-        )
-    );
-  }
-}
-
-class ActionsPage extends StatelessWidget {
-  const ActionsPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: Text('Actions Page', style: Theme.of(context).textTheme.headline4),
               ),
               const Spacer(),
             ]
