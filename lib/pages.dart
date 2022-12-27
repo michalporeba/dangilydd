@@ -10,7 +10,7 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('PATAIU'),
+      appBar: AppBar(title: const Text("'da'n gilydd app"),
         automaticallyImplyLeading: false,
       ),
       body: Center(
@@ -169,7 +169,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final PageController controller = PageController(initialPage: 1);
     return Scaffold(
-      appBar: AppBar(title: const Text('PATAIU'),
+      appBar: AppBar(title: const Text("'da'n gilydd app"),
         leading: GestureDetector(
           onTap: () { /* Write listener code here */ },
           child: const Icon(

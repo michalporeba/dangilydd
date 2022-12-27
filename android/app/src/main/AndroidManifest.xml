@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pataiu">
    <application
-        android:label="pataiu"
+        android:label="dangilydd"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
