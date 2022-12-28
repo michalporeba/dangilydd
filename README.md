@@ -8,7 +8,7 @@ The name comes from Welsh *'da'n gilydd* meaning *together*.
 
 I think it is important.
 
-## Context
+## The Context
 
 The early 2020s changed a lot. For one reason or another, we don't volunteer in our communities as much as we used to. That's a phenomenon experienced by several organisations I know. 
 
@@ -31,11 +31,24 @@ What will be the end result? It is difficult to say right now. We will need to f
 What is certain is that the solution will have to be secure. It will deal with the personal information of volunteers. It will need to provide reliable information to deal with medical governance and show that people involved in volunteering had adequate training to perform specific roles. 
 
 The user's journeys that may be in scope can include: 
-A new volunteer learning about volunteering, deciding to sign up to become a member of an organisation. 
-Progressing through....
+* A new volunteer learning about volunteering, deciding to sign up to become a member of an organisation. 
+* Progressing through necessary training unlocks additional things the volunteer can help with, including different event types they can attend.
+* Ability to record and prove the necessary proficiency and currency with skills, including recording experience.
 
-## The assumptions
+## The Product Assumptions
 * Digital-first approach will help us engage with future generations.
-* User-centric design with accessibility in min
+* User-centric design with accessibility in mind will help us engage with a wider, more diverse group of potential volunteers.
+* Gamification will provide the needed level of interactivity to the experience. Instant feedback, self-service ability to discover information and next steps. 
+* Working in the open, using open standards, open source, open data will allow for self-hosting of the solution by any organisation, making the outcome available anywhere in the world. 
 
+## The Initial Constraints
 
+Working in the open - because it is a volunteering project for volunteers. 
+We will work in small and verifiable steps. TDD, CD and automation will be important.
+Stack: flutter - because a single code base can give us multiple platforms. Backend? Don't know yet.
+It has to be easy to deploy so anybody can run it.
+It has to work with intermittent internet connectivity.
+Data. We want to be ethical. Hold only what's needed, and if possible in something like Personal Online Solid Pods. 
+
+## The small print
+Most of the above may change as we learn about the problem.
