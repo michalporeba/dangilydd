@@ -43,12 +43,18 @@ The user's journeys that may be in scope can include:
 
 ## The Initial Constraints
 
-Working in the open - because it is a volunteering project for volunteers. 
-We will work in small and verifiable steps. TDD, CD and automation will be important.
-Stack: flutter - because a single code base can give us multiple platforms. Backend? Don't know yet.
-It has to be easy to deploy so anybody can run it.
-It has to work with intermittent internet connectivity.
-Data. We want to be ethical. Hold only what's needed, and if possible in something like Personal Online Solid Pods. 
+* Working in the open - because it is a volunteering project for volunteers. 
+* We will work in small and verifiable steps. TDD, CD and automation will be important.
+* Stack: flutter - because a single code base can give us multiple platforms. Backend? Don't know yet.
+* It has to be easy to deploy so anybody can run it.
+* It has to work with intermittent internet connectivity.
+* Data. We want to be ethical. Hold only what's needed, and if possible in something like Personal Online Solid Pods. 
 
+&nbsp;
+## Interested?
+
+Contact me on [Twitter](https://twitter.com/michalincs), [Mastodon](https://techhub.social/@michalporeba), or by [email](mailto://michalporeba@gmail.com). Or simply start collaboration here, on github. 
+
+&nbsp;
 ## The small print
 Most of the above may change as we learn about the problem.
