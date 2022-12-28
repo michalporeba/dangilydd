@@ -1,12 +1,12 @@
+# Dangilydd
+
+The name comes from Welsh *'da'n gilydd* meaning *together*.
+
 ## What is it all about? 
 
 **Volunteering!** Especially in environments where training and governance are essential - like **first aid** volunteering. But also about using **open-source** as a form of **volunteering** in (many) **local communities**. 
 
 I think it is important.
-
-# Dangilydd
-
-The name comes from Welsh *'da'n gilydd* meaning *together*.
 
 ## Context
 
