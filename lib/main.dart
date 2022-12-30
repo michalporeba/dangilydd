@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pataiu/pages.dart';
-import 'package:pataiu/login.dart';
+import 'package:dangilydd/pages.dart';
+import 'package:dangilydd/login.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));

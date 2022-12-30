@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pataiu/state.dart';
+import 'package:dangilydd/state.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -8,7 +8,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('PATAIU'),
+      appBar: AppBar(title: const Text("Gyda'n gilydd"),
         automaticallyImplyLeading: false,
       ),
       body: Center(

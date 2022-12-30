@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pataiu/model.dart';
+import 'package:dangilydd/model.dart';
 import 'state.dart';
 
 final notificationsProvider = FutureProvider<List<UserNotification>>((ref) async {

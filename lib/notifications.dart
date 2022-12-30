@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pataiu/providers.dart';
-import 'package:pataiu/model.dart';
+import 'package:dangilydd/providers.dart';
+import 'package:dangilydd/model.dart';
 
 class NotificationsView extends ConsumerWidget {
   const NotificationsView({Key? key}) : super(key: key);

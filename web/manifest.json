@@ -1,11 +1,11 @@
 {
-    "name": "pataiu",
-    "short_name": "pataiu",
+    "name": "dangilydd",
+    "short_name": "dangilydd",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Volunteering together.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
