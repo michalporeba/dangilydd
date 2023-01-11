@@ -57,8 +57,7 @@ Read about how [others use it](https://wistia.com/learn/marketing/the-science-be
 
 **The assumption** here is that we can see similar benefits in increased engagement as others who tried gamification.
 
-### Other assumptions
-The below ideas need further expanding.
+### Some other assumptions:
 * User-centric design with accessibility in mind will help us engage with a wider, more diverse group of potential volunteers.
 * Working in the open, using open standards, open source, open data will allow for self-hosting of the solution by any organisation, making the outcome available anywhere in the world. 
 
