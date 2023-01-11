@@ -4,12 +4,14 @@
 
 The name comes from Welsh *'da'n gilydd* meaning *together*.
 
+&nbsp;
 ## What is it all about? 
 
 **Volunteering!** Especially in environments where training and governance are essential - like **first aid** volunteering. But also about using **open-source** as a form of **volunteering** in (many) **local communities**. 
 
 I think it is important. You can read more about it [here](https://michalporeba.github.io/dangilydd).
 
+&nbsp;
 ## The Current Assumptions
 
 The below assumptions will have to be validated. They are based on my own experience volunteering in first aid in three organisation.
@@ -28,8 +30,7 @@ will help to better engage future generations of volunteers.
 
 ### We want to have an impact on the world
 
-[What matters most to millenials? Millenials want to mater]
-(https://sustainablebrands.com/read/organizational-change/what-matters-most-to-millennials-millennials-want-to-matter). 
+[What matters most to millenials? Millenials want to mater](https://sustainablebrands.com/read/organizational-change/what-matters-most-to-millennials-millennials-want-to-matter). 
 This is only one of many articles on the subjectin the context of workplaces. 
 In their book [The Purpose Revolution](https://www.google.co.uk/books/edition/_/J504DwAAQBAJ)
 John Izzo and Jeff Vanderwielen call our times the Age of Social Good as more and more of us want to do good. 
@@ -52,12 +53,12 @@ How many patients did they treat? How many people attended the event they helped
 Not only we want to matter, we want to know about it now. This helps with our motivation.
 We do something, we get a reward, even if it is some virtual points, and we feel good (thanks to release of dopamine). 
 This makes us want to do it again. There is [science behind it](https://journals.sagepub.com/doi/10.1177/1046878118774385). 
-Read about how [others use it](https://wistia.com/learn/marketing/the-science-behind-gamification)
+Read about how [others use it](https://wistia.com/learn/marketing/the-science-behind-gamification).
 
 **The assumption** here is that we can see similar benefits in increased engagement as others who tried gamification.
 
 ### Other assumptions
-The below ideas need further expanding
+The below ideas need further expanding.
 * User-centric design with accessibility in mind will help us engage with a wider, more diverse group of potential volunteers.
 * Working in the open, using open standards, open source, open data will allow for self-hosting of the solution by any organisation, making the outcome available anywhere in the world. 
 
