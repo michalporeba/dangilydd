@@ -62,6 +62,19 @@ Read about how [others use it](https://wistia.com/learn/marketing/the-science-be
 * Working in the open, using open standards, open source, open data will allow for self-hosting of the solution by any organisation, making the outcome available anywhere in the world. 
 
 &nbsp;
+## Example User Journeys
+
+### Joining in
+
+The most obvious but probably not the first journey to be implemented in the app. A journey from an interest to becoming a volunteer.
+The journey could be delivered independently through a web application to help with recruitment, but it is unlikley that
+starting the app there would attrackt users. 
+
+### Going to an event
+
+An individual volunteer can go to an event and log it to track activity and get rewards - the gamification element. 
+
+&nbsp;
 ## The Initial Constraints
 
 * Working in the open - because it is a volunteering project for volunteers. 
