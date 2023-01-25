@@ -1,11 +1,16 @@
 library model;
 
 import 'package:model/events_summary.dart';
+import 'package:model/fact.dart';
 
-/// A Calculator.
 class Person {
-  /// Returns [value] plus 1.
+  final List<Fact> _facts = <Fact>[];
+
   EventsSummary getEventsSummary() {
-    return const EventsSummary(count: 0);
+    return EventsSummary(count: _facts.length);
+  }
+
+  void addFact(Fact fact) {
+    _facts.add(fact);
   }
 }

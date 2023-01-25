@@ -1,0 +1,5 @@
+library model;
+
+class Fact {
+
+}
