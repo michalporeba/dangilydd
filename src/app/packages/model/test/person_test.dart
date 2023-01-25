@@ -3,10 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:model/person.dart';
 
 void main() {
-  test('adds one to input values', () {
+  test('a newly created person has no events', () {
     final sut = Person();
-    expect(sut.addOne(2), 3);
-    expect(sut.addOne(-7), -6);
-    expect(sut.addOne(0), 1);
+    expect(sut.getEventsSummary().count, 0);
   });
 }
