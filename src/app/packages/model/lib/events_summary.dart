@@ -12,12 +12,4 @@ class EventsSummary {
   const EventsSummary.empty():
         count = 0,
         duration = 0;
-
-  EventsSummary copyWith({
-    int? count,
-    int? duration,
-  }) => EventsSummary(
-    count: count ?? this.count,
-    duration: duration ?? this.duration,
-  );
 }
