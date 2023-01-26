@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(32.0),
-                  child: Text('Who are you?', style: Theme.of(context).textTheme.headline4),
+                  child: Text('Who are you?', style: Theme.of(context).textTheme.headlineMedium),
                 ),
                 const UserButton(name: 'Aneirin', image: '1005'),
                 const UserButton(name: 'Branwen', image: '1011'),
@@ -56,13 +56,13 @@ class UserButton extends ConsumerWidget {
                   children: [
                     const SizedBox(width: 36),
                     Ink.image(
-                      image: NetworkImage('https://picsum.photos/200?image='+image),
+                      image: NetworkImage('https://picsum.photos/200?image=$image'),
                       width: 100,
                       height: 100,
                       fit: BoxFit.cover,
                     ),
                 const SizedBox(width: 24),
-                Text(name, style: Theme.of(context).textTheme.headline4),
+                Text(name, style: Theme.of(context).textTheme.headlineMedium),
               ]
           ),
         ),

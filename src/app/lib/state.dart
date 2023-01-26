@@ -3,15 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 @immutable
 class User {
-  final List<String> _roles;
-
   final String name;
 
-  User({
+  const User({
     required this.name,
-    List<String>? roles
-  }) :
-    _roles = List.unmodifiable(roles ?? <String>[]);
+  });
 
   User copyWith({
     String? name
@@ -35,7 +31,7 @@ class AppState {
 }
 
 class AppStateNotifier extends StateNotifier<AppState> {
-  AppStateNotifier() : super(AppState());
+  AppStateNotifier() : super(const AppState());
 
   void setUser(User? user) => state = state.copyWith(user: user);
 }

@@ -20,7 +20,7 @@ class WelcomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(32.0),
                 child: Consumer(builder: (context, ref, _) {
                   User? user = ref.watch(appState).user;
-                  return Text('Hi, ${user?.name ?? ''}', style: Theme.of(context).textTheme.headline4);
+                  return Text('Hi, ${user?.name ?? ''}', style: Theme.of(context).textTheme.headlineMedium);
                 }),
               ),
               const NotificationsView(),
@@ -31,7 +31,7 @@ class WelcomePage extends StatelessWidget {
                     onPressed: () => Navigator.pushReplacementNamed(context, '/'),
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
-                      child: Text('Hello', style: Theme.of(context).textTheme.headline4),
+                      child: Text('Hello', style: Theme.of(context).textTheme.headlineMedium),
                     )
                 ),
               )
@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(24.0),
-                child: Text('Your upcoming events', style: Theme.of(context).textTheme.headline5),
+                child: Text('Your upcoming events', style: Theme.of(context).textTheme.headlineSmall),
               ),
               const EventTile(
                 leading: EventLogo(text: 'HP'),
@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text('Sign up for more', style: Theme.of(context).textTheme.headline5),
+                child: Text('Sign up for more', style: Theme.of(context).textTheme.headlineSmall),
               ),
               const EventTile(
                   leading: EventLogo(text: 'HP', color: Colors.black38),
@@ -108,8 +108,8 @@ class EventLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
+      backgroundColor: color,
       child: Text(text),
-      backgroundColor: color
     );
   }
 }
@@ -131,7 +131,7 @@ class EventTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 6,
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: ListTile(
         leading: leading,
         title: Text(title),
@@ -153,7 +153,7 @@ class ResourcesPage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(32.0),
-                child: Text('Resources Page', style: Theme.of(context).textTheme.headline4),
+                child: Text('Resources Page', style: Theme.of(context).textTheme.headlineMedium),
               ),
               const Spacer(),
             ]
@@ -178,7 +178,7 @@ class MainPage extends StatelessWidget {
         ),
         actions: <Widget>[
           Padding(
-              padding: EdgeInsets.only(right: 20.0),
+              padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () { Navigator.pushReplacementNamed(context, '/login'); },
                 child: const Icon(

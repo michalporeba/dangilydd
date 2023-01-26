@@ -59,8 +59,8 @@ class _NotificationsContentViewState extends State<NotificationsContentView> {
           int removeIndex = notifications.indexOf(notification);
           UserNotification removedItem = notifications.removeAt(removeIndex);
 
-          AnimatedListRemovedItemBuilder builder = (context, animation)
-          => _buildItem(removedItem, animation);
+          builder(context, animation)
+            => _buildItem(removedItem, animation);
 
           _listKey.currentState?.removeItem(
               removeIndex,
@@ -82,7 +82,7 @@ class NotificationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle? buttonStyle = Theme.of(context).textTheme.button?.copyWith(color: Colors.pink);
+    TextStyle? buttonStyle = Theme.of(context).textTheme.labelLarge?.copyWith(color: Colors.pink);
     Icon icon = const Icon(Icons.message);
     if (data.icon == 'warning') {
       icon = const Icon(Icons.warning);
@@ -96,8 +96,8 @@ class NotificationCard extends StatelessWidget {
             leading: icon,
             minVerticalPadding: 10,
             horizontalTitleGap: 0,
-            title: Text(data.subject, style: Theme.of(context).textTheme.headline5),
-            subtitle: Text(data.message ?? '', style: Theme.of(context).textTheme.bodyText1),
+            title: Text(data.subject, style: Theme.of(context).textTheme.headlineSmall),
+            subtitle: Text(data.message ?? '', style: Theme.of(context).textTheme.bodyLarge),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -108,8 +108,8 @@ class NotificationCard extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               TextButton(
-                child: Text('Acknowledge', style: buttonStyle),
                 onPressed: onAcknowledge,
+                child: Text('Acknowledge', style: buttonStyle),
               ),
               const SizedBox(width: 8),
             ],

@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Text('to be continued ...', style: Theme.of(context).textTheme.headline4)
+        child: Text('to be continued ...', style: Theme.of(context).textTheme.headlineMedium)
       ),
     );
   }

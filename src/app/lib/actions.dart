@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'state.dart';
 
 class UserAction {
   String key;
@@ -9,7 +8,6 @@ class UserAction {
 }
 
 final actionsProvider = FutureProvider<List<UserAction>>((ref) async {
-  User? user = ref.watch(appState).user;
 
   return [
     UserAction(key: 'sample.one'),
@@ -30,7 +28,7 @@ class ActionsPage extends ConsumerWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(32.0),
-          child: Text('Actions Page', style: Theme.of(context).textTheme.headline4),
+          child: Text('Actions Page', style: Theme.of(context).textTheme.headlineMedium),
         ),
         Expanded(
           child: actionsFuture.when(
@@ -78,7 +76,7 @@ class ActionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 6,
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: ListTile(
         leading: leading,
         title: Text(title),
