@@ -9,7 +9,7 @@ void main() {
     expect(sut.getEventsSummary().count, 0);
   });
 
-  test('an event can be added', () {
+  test('an event attendance can be added', () {
     final sut = Person();
     sut.addFact(Fact());
     expect(sut.getEventsSummary().count, 1);
