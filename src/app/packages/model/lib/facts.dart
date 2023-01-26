@@ -13,3 +13,9 @@ class EventAttendance extends Fact {
   => EventAttendance(duration: duration ?? this.duration);
 }
 
+class TrainingAttendance extends Fact {
+  final int duration;
+
+  const TrainingAttendance({required this.duration});
+}
+
