@@ -1,7 +1,7 @@
 library model;
 
 import 'package:model/events_summary.dart';
-import 'package:model/fact.dart';
+import 'package:model/facts.dart';
 
 class Person {
   final List<Fact> _facts = <Fact>[];
