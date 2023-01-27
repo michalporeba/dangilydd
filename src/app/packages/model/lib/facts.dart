@@ -5,12 +5,13 @@ abstract class Fact {
 }
 
 class EventAttendance extends Fact {
+  final DateTime date;
   final int duration;
 
-  const EventAttendance({required this.duration});
-
-  EventAttendance copyWith({int? duration})
-  => EventAttendance(duration: duration ?? this.duration);
+  const EventAttendance({
+    required this.date,
+    required this.duration,
+  });
 }
 
 class TrainingAttendance extends Fact {
