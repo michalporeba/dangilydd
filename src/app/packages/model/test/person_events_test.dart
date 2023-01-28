@@ -33,7 +33,17 @@ void main() {
     sut.addFact(EventAttendance(date: DateTime.utc(2023, 1, 3), duration: 1));
     sut.addFact(EventAttendance(date: DateTime.utc(2023, 1, 4), duration: 3));
     sut.addFact(EventAttendance(date: DateTime.utc(2023, 1, 5), duration: 5));
-    sut.addFact(EventAttendance(date: DateTime.utc(2023, 1, 6), duration: 11));
-    expect(sut.getEventsSummary(from: DateTime.utc(2023,1, 4)).duration, 19);
+    sut.addFact(EventAttendance(date: DateTime.utc(2023, 1, 7), duration: 11));
+
+    // from is inclusive
+    expect(sut.getEventsSummary(from: DateTime.utc(2023, 1, 4)).duration, 19);
+    expect(sut.getEventsSummary(from: DateTime.utc(2023, 1, 6)).duration, 11);
+
+    // to is exclusive
+    expect(sut.getEventsSummary(to: DateTime.utc(2023, 1, 6)).duration, 9);
+    expect(sut.getEventsSummary(to: DateTime.utc(2023, 1, 4)).duration, 1);
+
+    // both from and to can work together
+    expect(sut.getEventsSummary(from: DateTime.utc(2023, 1, 4), to: DateTime.utc(2023, 1, 5)).duration, 3);
   });
 }

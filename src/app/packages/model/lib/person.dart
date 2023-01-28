@@ -7,10 +7,16 @@ import 'package:model/training_summary.dart';
 class Person {
   final List<Fact> _facts = <Fact>[];
 
-  EventsSummary getEventsSummary({DateTime? from}) {
+  EventsSummary getEventsSummary({
+    DateTime? from,
+    DateTime? to,
+  }) {
     var events = _facts.whereType<EventAttendance>();
     if (null != from) {
       events = events.where((e) => e.date.compareTo(from) >= 0);
+    }
+    if (null != to) {
+      events = events.where((e) => e.date.compareTo(to) < 0);
     }
     return EventsSummary(
         count: events.length,
