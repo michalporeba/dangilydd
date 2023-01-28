@@ -12,7 +12,7 @@ void main() {
     sut.addFact(const TrainingAttendance(duration: 0));
     expect(sut.getTrainingSummary().count, 2);
     // check if other facts are not included
-    sut.addFact(const EventAttendance(duration: 15));
+    sut.addFact(EventAttendance(date: DateTime.now(), duration: 15));
     expect(sut.getTrainingSummary().count, 2);
   });
 
@@ -24,7 +24,7 @@ void main() {
     sut.addFact(const TrainingAttendance(duration: 13));
     expect(sut.getTrainingSummary().duration, 103);
     // check if other facts are not included
-    sut.addFact(const EventAttendance(duration: 15));
+    sut.addFact(EventAttendance(date: DateTime.now(), duration: 15));
     expect(sut.getTrainingSummary().duration, 103);
   });
 }
