@@ -5,13 +5,13 @@ import 'package:model/facts.dart';
 import 'package:model/training_summary.dart';
 
 class Person {
-  final List<Fact> _facts = <Fact>[];
+  final Map<String, Fact> _facts = <String, Fact>{};
 
   EventsSummary getEventsSummary({
     DateTime? from,
     DateTime? to,
   }) {
-    var events = _facts.whereType<EventAttendance>();
+    var events = _facts.values.whereType<EventAttendance>();
     if (null != from) {
       events = events.where((e) => e.date.compareTo(from) >= 0);
     }
@@ -26,15 +26,17 @@ class Person {
 
   TrainingSummary getTrainingSummary()
   => TrainingSummary(
-      count: _facts
+      count: _facts.values
           .whereType<TrainingAttendance>()
           .length,
-      duration: _facts
+      duration: _facts.values
           .whereType<TrainingAttendance>()
           .fold(0, (sum, current) => sum + current.duration)
   );
 
   void addFact(Fact fact) {
-    _facts.add(fact);
+    if (!_facts.containsKey(fact.id)) {
+      _facts[fact.id] = fact;
+    }
   }
 }

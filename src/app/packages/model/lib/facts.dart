@@ -1,22 +1,30 @@
 library model;
 
+import 'package:uuid/uuid.dart';
+
 abstract class Fact {
-  const Fact();
+  String id;
+  Fact({required this.id});
 }
 
 class EventAttendance extends Fact {
   final DateTime date;
   final int duration;
 
-  const EventAttendance({
+  EventAttendance({
+    required String id,
     required this.date,
     required this.duration,
-  });
+  }) : super(id: id);
 }
 
 class TrainingAttendance extends Fact {
   final int duration;
 
-  const TrainingAttendance({required this.duration});
+  TrainingAttendance({
+    required String id,
+    required this.duration,
+  })
+      : super(id: id);
 }
 
