@@ -2,10 +2,16 @@ library model;
 
 import 'package:model/events_summary.dart';
 import 'package:model/facts.dart';
+import 'package:model/person_details.dart';
 import 'package:model/training_summary.dart';
 
 class Person {
   final Map<String, Fact> _facts = <String, Fact>{};
+  PersonDetails details = const PersonDetails(name: '');
+
+  PersonDetails getDetails() {
+    return details;
+  }
 
   EventsSummary getEventsSummary({
     DateTime? from,
@@ -35,6 +41,9 @@ class Person {
   );
 
   void addFact(Fact fact) {
+    if (fact is PropertyChange && fact.property == 'name') {
+      details = PersonDetails(name: fact.value);
+    }
     if (!_facts.containsKey(fact.id)) {
       _facts[fact.id] = fact;
     }

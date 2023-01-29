@@ -5,6 +5,17 @@ abstract class Fact {
   Fact({required this.id});
 }
 
+class PropertyChange extends Fact {
+  final String property;
+  final String value;
+
+  PropertyChange({
+    required String id,
+    required this.property,
+    required this.value,
+  }) : super(id: id);
+}
+
 class EventAttendance extends Fact {
   final DateTime date;
   final int duration;
@@ -22,7 +33,6 @@ class TrainingAttendance extends Fact {
   TrainingAttendance({
     required String id,
     required this.duration,
-  })
-      : super(id: id);
+  }) : super(id: id);
 }
 

@@ -19,4 +19,13 @@ void main() {
     expect(sut.getEventsSummary().count, 1);
     expect(sut.getTrainingSummary().count, 1);
   });
+
+  test('a person can be named and renamed', () {
+    final sut = Person();
+    expect(sut.getDetails().name, '');
+    sut.addFact(PropertyChange(id: '', property: 'name', value: 'Adam'));
+    expect(sut.getDetails().name, 'Adam');
+    sut.addFact(PropertyChange(id: '', property: 'name', value: 'Beth'));
+    expect(sut.getDetails().name, 'Beth');
+  });
 }
