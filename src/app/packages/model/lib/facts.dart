@@ -1,7 +1,5 @@
 library model;
 
-import 'package:uuid/uuid.dart';
-
 abstract class Fact {
   String id;
   Fact({required this.id});
