@@ -85,8 +85,4 @@ An individual volunteer can go to an event and log it to track activity and get 
 &nbsp;
 ## Interested?
 
-Contact me on [Twitter](https://twitter.com/michalincs), [Mastodon](https://techhub.social/@michalporeba), or by [email](mailto://michalporeba@gmail.com). Or simply start collaboration here, on github. 
-
-&nbsp;
-## The small print
-Most of the above may change as we learn about the problem.
+Contact me on [Twitter](https://twitter.com/michalincs), [Mastodon](https://techhub.social/@michalporeba), or by [email](mailto://michalporeba@gmail.com). Or simply start collaboration here, on github, by [creating an issue](https://github.com/michalporeba/dangilydd/issues) or [starting a discussion](https://github.com/michalporeba/dangilydd/discussions).
